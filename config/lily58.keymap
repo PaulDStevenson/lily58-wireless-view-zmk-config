@@ -9,6 +9,30 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    macros {
+        mac_test: mac_test {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp M &kp A &kp C &kp LS(O) &kp LS(S)>;
+
+            label = "MAC_TEST";
+        };
+        win_test: win_test {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&kp W &kp I &kp N>;
+
+            label = "WIN_TEST";
+        };
+        game_test: game_test {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&kp G &kp A &kp M &kp E>;
+
+            label = "GAME_TEST";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -22,7 +46,7 @@
 
             label = "Base";
             bindings = <
-&kp ESC    &kp N1       &kp N2          &kp N3          &kp N4            &kp N5                         &kp N6  &kp N7             &kp N8           &kp N9           &kp N0               &kp GRAVE
+&kp ESC    &kp N1       &kp N2          &kp N3          &kp N4            &kp N5                         &kp N6  &kp N7             &kp N8           &kp N9           &kp N0               &mt M GRAVE
 &kp TAB    &kp Q        &kp W           &kp E           &kp R             &kp T                          &kp Y   &kp U              &kp I            &kp O            &kp P                &kp MINUS
 &kp LCTRL  &mt LCTRL A  &mt LEFT_ALT S  &mt LEFT_GUI D  &mt LEFT_SHIFT F  &kp G                          &kp H   &mt RIGHT_SHIFT J  &mt RIGHT_GUI K  &mt RIGHT_ALT L  &mt RCTRL SEMICOLON  &kp SQT
 &kp LSHFT  &kp Z        &kp X           &kp C           &kp V             &kp B   &kp LBKT     &kp RBKT  &kp N   &kp M              &kp COMMA        &kp DOT          &kp FSLH             &kp RSHFT
@@ -42,7 +66,7 @@
 
             label = "Windows";
             bindings = <
-&trans  &trans      &trans          &trans              &trans            &trans                    &trans  &trans             &trans       &trans           &trans              &trans
+&trans  &trans      &trans          &trans              &trans            &trans                    &trans  &trans             &trans       &trans           &trans              &mt W GRAVE
 &trans  &trans      &trans          &trans              &trans            &trans                    &trans  &trans             &trans       &trans           &trans              &trans
 &trans  &mt LWIN A  &mt LEFT_ALT S  &mt LEFT_CONTROL D  &mt LEFT_SHIFT F  &trans                    &trans  &mt RIGHT_SHIFT J  &mt RCTRL K  &mt RIGHT_ALT L  &mt RGUI SEMICOLON  &trans
 &trans  &trans      &trans          &trans              &trans            &trans  &trans    &trans  &trans  &trans             &trans       &trans           &trans              &trans
@@ -140,13 +164,14 @@
             // | SHIFT |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
-            label = "Base";
+            label = "Gaming";
             bindings = <
-&kp ESC    &kp N1       &kp N2          &kp N3          &kp N4            &kp N5                         &kp N6  &kp N7             &kp N8           &kp N9           &kp N0               &kp GRAVE
-&kp TAB    &kp Q        &kp W           &kp E           &kp R             &kp T                          &kp Y   &kp U              &kp I            &kp O            &kp P                &kp MINUS
-&kp LCTRL  &kp A        &kp S           &kp D           &kp F             &kp G                          &kp H   &kp J              &kp K            &kp L            &kp SEMICOLON        &kp SQT
-&kp LSHFT  &kp Z        &kp X           &kp C           &kp V             &kp B   &kp LBKT     &kp RBKT  &kp N   &kp M              &kp COMMA        &kp DOT          &kp FSLH             &kp RSHFT
-                                        &kp LALT        &kp LGUI          &mo 2   &kp SPACE    &kp RET   &mo 4   &kp BSPC           &kp RGUI            >;
+&kp ESC    &kp N1  &kp N2  &kp N3    &kp N4     &kp N5                         &kp N6  &kp N7    &kp N8     &kp N9   &kp N0         &mt G GRAVE
+&kp TAB    &kp Q   &kp W   &kp E     &kp R      &kp T                          &kp Y   &kp U     &kp I      &kp O    &kp P          &kp MINUS
+&kp LGUI   &kp A   &kp S   &kp D     &kp F      &kp G                          &kp H   &kp J     &kp K      &kp L    &kp SEMICOLON  &kp SQT
+&kp LSHFT  &kp Z   &kp X   &kp C     &kp V      &kp B   &kp LBKT     &kp RBKT  &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH       &kp RSHFT
+                           &kp LALT  &kp LCTRL  &none   &kp SPACE    &kp RET   &to 0   &kp BSPC  &kp RGUI
+            >;
 
             label = "Gaming";
         };
