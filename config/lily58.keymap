@@ -42,11 +42,11 @@
 
             label = "Windows";
             bindings = <
-&trans     &trans       &kp N2          &kp N3              &kp N4            &kp N5                         &kp N6  &kp N7             &kp N8           &kp N9           &kp N0               &kp GRAVE
-&kp TAB    &kp Q        &kp W           &kp E               &kp R             &kp T                          &kp Y   &kp U              &kp I            &kp O            &kp P                &kp MINUS
-&kp LCTRL  &mt LCTRL A  &mt LEFT_ALT S  &mt LEFT_CONTROL D  &mt LEFT_SHIFT F  &kp G                          &kp H   &mt RIGHT_SHIFT J  &mt RIGHT_GUI K  &mt RIGHT_ALT L  &mt RCTRL SEMICOLON  &kp SQT
-&kp LSHFT  &kp Z        &kp X           &kp C               &kp V             &kp B   &kp LBKT     &kp RBKT  &kp N   &kp M              &kp COMMA        &kp DOT          &kp FSLH             &kp RSHFT
-                                        &kp LALT            &kp LGUI          &mo 3   &kp SPACE    &kp RET   &mo 5   &kp BSPC           &kp RGUI
+&trans     &trans       &trans          &trans              &trans            &trans                         &trans  &trans             &trans           &trans           &trans               &trans
+&trans     &trans       &trans          &trans              &trans            &trans                         &trans  &trans             &trans           &trans           &trans               &trans
+&kp LCTRL  &mt LCTRL A  &mt LEFT_ALT S  &mt LEFT_CONTROL D  &mt LEFT_SHIFT F  &trans                         &trans   &mt RIGHT_SHIFT J  &mt RIGHT_GUI K  &mt RIGHT_ALT L  &mt RCTRL SEMICOLON &trans
+&trans     &trans       &trans          &trans              &trans            &trans   &trans     &trans     &trans   &trans             &trans          &trans           &trans               &trans
+                                        &trans              &trans          &mo 3   &trans    &trans   &mo 5   &trans           &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -83,9 +83,9 @@
             label = "WLower";
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans     &trans           &trans    &trans    &trans
-&kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6                          &kp F7     &kp F8     &kp F9           &kp F10   &kp F11   &kp F12
-&kp GRAVE   &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &kp PRCNT                       &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp TILDE
-&trans      &trans        &trans        &trans        &trans        &trans        &trans    &trans  &trans     &kp MINUS  &kp KP_PLUS      &kp LBRC  &kp RBRC  &kp PIPE
+&trans      &trans        &trans        &trans        &trans        &trans                          &trans     &trans     &trans           &trans    &trans    &trans
+&trans      &trans        &trans        &trans        &trans        &trans                          &trans     &trans     &trans           &trans    &trans    &trans
+&trans      &trans        &trans        &trans        &trans        &trans        &trans    &trans  &trans     &trans     &trans           &trans    &trans    &trans
                                         &trans        &trans        &trans        &trans    &trans  &trans     &trans     &trans
             >;
 
@@ -123,9 +123,9 @@
             label = "WRaise";
             bindings = <
 &trans     &trans  &trans  &trans   &trans   &trans                     &trans       &trans     &trans     &trans           &trans    &trans
-&kp GRAVE  &kp N1  &kp N2  &kp N3   &kp N4   &kp N5                     &kp N6       &kp N7     &kp UP     &kp N9           &kp N0    &trans
-&kp F1     &kp F2  &kp F3  &kp F4   &kp F5   &kp F6                     &trans       &kp LEFT   &kp DOWN   &kp RIGHT_ARROW  &trans    &trans
-&kp F7     &kp F8  &kp F9  &kp F10  &kp F11  &kp F12  &trans    &trans  &kp KP_PLUS  &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH
+&trans  &trans  &trans  &trans   &trans   &trans                        &trans       &trans     &trans     &trans           &trans    &trans
+&trans  &trans  &trans  &trans   &trans   &trans                        &trans       &trans     &trans     &trans           &trans    &trans
+&trans  &trans  &trans  &trans   &trans   &trans      &trans    &trans  &trans       &trans     &trans     &trans           &trans    &trans
                            &trans   &trans   &trans   &trans    &trans  &trans       &trans     &trans
             >;
 
