@@ -10,26 +10,11 @@
 
 / {
     macros {
-        mac_test: mac_test {
+        delete_word: delete_word {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp M &kp A &kp C &kp LS(O) &kp LS(S)>;
-
-            label = "MAC_TEST";
-        };
-        win_test: win_test {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp W &kp I &kp N>;
-
-            label = "WIN_TEST";
-        };
-        game_test: game_test {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp G &kp A &kp M &kp E>;
-
-            label = "GAME_TEST";
+            bindings = <>;
+            label = "DELETE_WORD";
         };
     };
 
@@ -107,7 +92,7 @@
 &kp TAB    &kp Q          &kp W             &kp E             &kp R               &kp T                          &kp Y   &kp U                &kp I              &kp O              &kp P                  &kp MINUS
 &kp LCTRL  &HRML LCTRL A  &HRML LEFT_ALT S  &HRML LEFT_GUI D  &HRML LEFT_SHIFT F  &kp G                          &kp H   &HMRR RIGHT_SHIFT J  &HMRR RIGHT_GUI K  &HMRR RIGHT_ALT L  &HMRR RCTRL SEMICOLON  &kp SQT
 &kp LSHFT  &kp Z          &kp X             &kp C             &kp V               &kp B   &kp LBKT     &kp RBKT  &kp N   &kp M                &kp COMMA          &kp DOT            &kp FSLH               &kp RIGHT_SHIFT
-                                            &kp LALT          &kp LGUI            &mo 2   &kp SPACE    &kp RET   &mo 4   &kp BSPC             &kp RGUI
+                                            &kp LALT          &kp LGUI            &mo 4   &kp SPACE    &kp RET   &mo 2   &kp BSPC             &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
