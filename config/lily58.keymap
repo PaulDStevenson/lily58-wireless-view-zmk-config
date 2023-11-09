@@ -10,7 +10,7 @@
 
 / {
     macros {
-        select_word: select_word {
+        select_word_mac: select_word_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -27,7 +27,34 @@
 
             label = "SELECT_WORD";
         };
-        select_line: select_line {
+
+        delete_word_forward_mac: delete_word_forward_mac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp DEL>,
+                <&kp LEFT_ALT>;
+
+            label = "DEL_WORD_FW";
+        };
+
+        delete_word_back_mac: delete_word_back_mac_test {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp BSPC>,
+                <&kp LEFT_ALT>;
+
+            label = "DEL_WORD_BK";
+        };
+
+        select_line_mac: select_line_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
