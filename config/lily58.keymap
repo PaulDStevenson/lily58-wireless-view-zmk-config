@@ -27,7 +27,6 @@
 
             label = "SELECT_WORD";
         };
-
         delete_word_forward_mac: delete_word_forward_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -35,12 +34,10 @@
                 <&macro_press>,
                 <&kp LEFT_ALT>,
                 <&macro_tap>,
-                <&kp DEL>,
-                <&kp LEFT_ALT>;
+                <&kp DEL &kp LEFT_ALT>;
 
             label = "DEL_WORD_FW";
         };
-
         delete_word_back_mac: delete_word_back_mac_test {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -48,12 +45,10 @@
                 <&macro_press>,
                 <&kp LEFT_ALT>,
                 <&macro_tap>,
-                <&kp BSPC>,
-                <&kp LEFT_ALT>;
+                <&kp BSPC &kp LEFT_ALT>;
 
             label = "DEL_WORD_BK";
         };
-
         select_line_mac: select_line_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -223,11 +218,11 @@
 
             label = "Raise";
             bindings = <
-&trans     &trans          &trans             &trans             &trans               &trans                     &trans       &trans        &trans     &trans           &trans    &trans
-&kp GRAVE  &kp N1          &kp N2             &kp N3             &kp N4               &kp N5                     &kp N6       &select_word  &kp UP     &select_line     &kp N0    &trans
-&kp F1     &HRML LCTRL F2  &HRML LEFT_ALT F3  &HRML LEFT_GUI F4  &HRML LEFT_SHIFT F5  &kp F6                     &trans       &kp LEFT      &kp DOWN   &kp RIGHT_ARROW  &trans    &trans
-&kp F7     &kp F8          &kp F9             &kp F10            &kp F11              &kp F12  &trans    &trans  &kp KP_PLUS  &kp MINUS     &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH
-                                              &trans             &trans               &trans   &trans    &trans  &trans       &trans        &trans
+&trans     &trans          &trans             &trans                 &trans                    &trans                     &trans       &trans            &trans     &trans            &trans    &trans
+&kp GRAVE  &kp N1          &kp N2             &delete_word_back_mac  &delete_word_forward_mac  &kp N5                     &kp N6       &select_word_mac  &kp UP     &select_line_mac  &kp N0    &trans
+&kp F1     &HRML LCTRL F2  &HRML LEFT_ALT F3  &HRML LEFT_GUI F4      &HRML LEFT_SHIFT F5       &kp F6                     &trans       &kp LEFT          &kp DOWN   &kp RIGHT_ARROW   &trans    &trans
+&kp F7     &kp F8          &kp F9             &kp F10                &kp F11                   &kp F12  &trans    &trans  &kp KP_PLUS  &kp MINUS         &kp EQUAL  &kp LBKT          &kp RBKT  &kp BSLH
+                                              &trans                 &trans                    &trans   &trans    &trans  &trans       &trans            &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
