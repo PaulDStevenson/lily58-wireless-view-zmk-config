@@ -27,28 +27,6 @@
 
             label = "SELECT_WORD";
         };
-        delete_word_forward_mac: delete_word_forward_mac {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_ALT>,
-                <&macro_tap>,
-                <&kp DEL &kp LEFT_ALT>;
-
-            label = "DEL_WORD_FW";
-        };
-        delete_word_back_mac: delete_word_back_mac_test {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_ALT>,
-                <&macro_tap>,
-                <&kp BSPC &kp LEFT_ALT>;
-
-            label = "DEL_WORD_BK";
-        };
         select_line_mac: select_line_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -65,6 +43,32 @@
                 <&kp LEFT_GUI &kp LEFT_SHIFT>;
 
             label = "SELECT_LINE";
+        };
+        next_tab: next_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp TAB>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "NEXT_TAB";
+        };
+        prev_tab: prev_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL &kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp TAB>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL &kp LEFT_SHIFT>;
+
+            label = "PREV_TAB";
         };
     };
 
@@ -181,7 +185,7 @@
 &bt BT_CLR  &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2             &bt BT_SEL 3             &bt BT_SEL 4                    &trans     &trans     &trans           &trans    &trans    &trans
 &kp F1      &kp F2            &kp F3             &kp F4                   &kp F5                   &kp F6                          &kp F7     &kp F8     &kp F9           &kp F10   &kp F11   &kp F12
 &kp GRAVE   &HRML LCTRL EXCL  &HRML LEFT_ALT AT  &HRML LEFT_COMMAND HASH  &HRML LEFT_SHIFT DOLLAR  &kp PRCNT                       &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp TILDE
-&trans      &trans            &trans             &trans                   &trans                   &trans        &trans    &trans  &trans     &kp MINUS  &kp KP_PLUS      &kp LBRC  &kp RBRC  &kp PIPE
+&trans      &trans            &trans             &trans                   &trans                   &caps_word    &trans    &trans  &trans     &kp MINUS  &kp KP_PLUS      &kp LBRC  &kp RBRC  &kp PIPE
                                                  &trans                   &trans                   &trans        &trans    &trans  &trans     &trans     &trans
             >;
 
@@ -208,7 +212,7 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        raise_layer {
+        nav_layer {
             // ------------------------------------------------------------------------------------------------------------
             // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
             // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
@@ -216,19 +220,19 @@
             // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
             //                     |      |      |      |        |  |       |      |       |       |
 
-            label = "Raise";
+            label = "Nav";
             bindings = <
-&trans     &trans          &trans             &trans                 &trans                    &trans                     &trans       &trans            &trans     &trans            &trans    &trans
-&kp GRAVE  &kp N1          &kp N2             &delete_word_back_mac  &delete_word_forward_mac  &kp N5                     &kp N6       &select_word_mac  &kp UP     &select_line_mac  &kp N0    &trans
-&kp F1     &HRML LCTRL F2  &HRML LEFT_ALT F3  &HRML LEFT_GUI F4      &HRML LEFT_SHIFT F5       &kp F6                     &trans       &kp LEFT          &kp DOWN   &kp RIGHT_ARROW   &trans    &trans
-&kp F7     &kp F8          &kp F9             &kp F10                &kp F11                   &kp F12  &trans    &trans  &kp KP_PLUS  &kp MINUS         &kp EQUAL  &kp LBKT          &kp RBKT  &kp BSLH
-                                              &trans                 &trans                    &trans   &trans    &trans  &trans       &trans            &trans
+&trans     &kp LG(LS(Z))    &trans                &kp LG(BSLH)            &kp LC(LS(TAB))       &kp LC(TAB)                      &trans         &trans                           &trans                       &trans                 &trans         &trans
+&kp GRAVE  &kp LC(H)        &kp LA(BACKSPACE)     &kp LA(DEL)             &kp LG(TAB)           &kp ENTER                        &kp RS(SPACE)  &kp LA(LEFT_ARROW)               &HMRR LG(UP_ARROW) UP_ARROW  &kp LA(RIGHT)          &kp N0         &trans
+&kp F1     &HRML LCTRL ESC  &HRML LEFT_ALT LG(Q)  &HRML LEFT_GUI LS(TAB)  &HRML LEFT_SHIFT TAB  &kp BACKSPACE                    &kp SPACE      &HMRR LG(LEFT_ARROW) LEFT_ARROW  &HMRR LG(DOWN) DOWN          &HMRR RG(RIGHT) RIGHT  &kp LA(RIGHT)  &trans
+&kp F7     &kp LG(Z)        &kp LG(X)             &kp LG(C)               &kp LG(V)             &kp DELETE     &trans    &trans  &kp KP_PLUS    &select_word_mac                 &select_line_mac             &kp LBKT               &kp RBKT       &kp BSLH
+                                                  &trans                  &trans                &trans         &trans    &trans  &trans         &trans                           &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        windows_raise_layer {
+        windows_nav_layer {
             // ------------------------------------------------------------------------------------------------------------
             // |       |     |     |      |      |      |                   |      |       |       |      |       |       |
             // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |   7   |   8   |  9   |   0   |       |
@@ -236,7 +240,7 @@
             // |   F7  |  F8 |  F9 |  F10 |  F11 |  F12 |        |  |       |  +   |   -   |   =   |  [   |   ]   |   \   |
             //                     |      |      |      |        |  |       |      |       |       |
 
-            label = "WRaise";
+            label = "WNav";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
