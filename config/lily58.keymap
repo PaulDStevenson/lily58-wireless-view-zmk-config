@@ -238,10 +238,10 @@
 
             label = "Nav";
             bindings = <
-&trans     &kp LG(LS(Z))    &trans                &kp LG(BSLH)            &kp LC(LS(TAB))       &kp LC(TAB)                      &trans         &trans                           &trans                       &trans                 &trans    &trans
-&kp GRAVE  &kp LC(H)        &kp LA(BACKSPACE)     &kp LA(DEL)             &kp LG(TAB)           &kp ENTER                        &kp RS(SPACE)  &kp LA(LEFT_ARROW)               &HMRR LG(UP_ARROW) UP_ARROW  &kp LA(RIGHT)          &kp HOME  &kp PAGE_UP
-&kp F1     &HRML LCTRL ESC  &HRML LEFT_ALT LG(Q)  &HRML LEFT_GUI LS(TAB)  &HRML LEFT_SHIFT TAB  &kp BACKSPACE                    &kp SPACE      &HMRR LG(LEFT_ARROW) LEFT_ARROW  &HMRR LG(DOWN) DOWN          &HMRR RG(RIGHT) RIGHT  &kp END   &kp PAGE_DOWN
-&kp F7     &kp LG(Z)        &kp LG(X)             &kp LG(C)               &kp LG(V)             &kp DELETE     &trans    &trans  &kp KP_PLUS    &select_word_mac                 &select_line_mac             &kp LBKT               &kp RBKT  &kp BSLH
+&trans     &kp LG(LS(Z))    &trans                &kp LG(BSLH)            &kp LC(LS(TAB))       &kp LC(TAB)                      &trans         &trans                           &trans            &trans                 &trans    &trans
+&kp GRAVE  &kp LC(H)        &kp LA(BACKSPACE)     &kp LA(DEL)             &kp LG(TAB)           &kp ENTER                        &kp RS(SPACE)  &kp LA(LEFT_ARROW)               &kp UP_ARROW      &kp LA(RIGHT)          &kp HOME  &kp PAGE_UP
+&kp F1     &HRML LCTRL ESC  &HRML LEFT_ALT LG(Q)  &HRML LEFT_GUI LS(TAB)  &HRML LEFT_SHIFT TAB  &kp BACKSPACE                    &kp SPACE      &HMRR LG(LEFT_ARROW) LEFT_ARROW  &kp DOWN_ARROW    &HMRR RG(RIGHT) RIGHT  &kp END   &kp PAGE_DOWN
+&kp F7     &kp LG(Z)        &kp LG(X)             &kp LG(C)               &kp LG(V)             &kp DELETE     &trans    &trans  &kp KP_PLUS    &select_word_mac                 &select_line_mac  &kp LBKT               &kp RBKT  &kp BSLH
                                                   &trans                  &trans                &trans         &trans    &trans  &trans         &trans                           &trans
             >;
 
