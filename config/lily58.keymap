@@ -224,11 +224,11 @@
 
             label = "Sam";
             bindings = <
-&none           &kp F1   &kp F10  &kp F11       &kp F12           &none                                 &none                  &kp F7  &kp F8  &kp F9  &kp F10    &none
-&kp F1          &kp F11  &kp F1   &kp F2        &kp F3            &kp LEFT_PARENTHESIS                  &kp RIGHT_PARENTHESIS  &kp N1  &kp N2  &kp N3  &kp POUND  &none
-&kp LEFT_SHIFT  &none    &kp F4   &kp F5        &kp F6            &kp LBKT                              &kp RBKT               &kp N4  &kp N5  &kp N6  &kp TILDE  &none
-&kp LCTRL       &none    &kp F7   &kp F8        &kp F9            &kp LEFT_BRACE        &none    &none  &kp RIGHT_BRACE        &kp N7  &kp N8  &kp N9  &kp N0     &none
-                                  &kp LEFT_ALT  &kp LEFT_COMMAND  &none                 &none    &none  &none                  &none   &none
+&none           &kp F1    &kp F2          &kp F3        &kp F4                &kp F5                        &kp F6       &kp F7                 &kp F8       &kp F9           &kp F10    &kp F11
+&none           &none     &kp LEFT_BRACE  &kp LBKT      &kp LEFT_PARENTHESIS  &kp EXCL                      &kp AT_SIGN  &kp RIGHT_PARENTHESIS  &kp RBKT     &kp RIGHT_BRACE  &kp GRAVE  &kp F12
+&kp LEFT_SHIFT  &kp PIPE  &none           &none         &kp DOUBLE_QUOTES     &kp QUESTION                  &caps_word   &kp MINUS              &kp EQUAL    &none            &kp TILDE  &none
+&kp LCTRL       &kp BSLH  &none           &none         &kp APOS              &kp FSLH      &none    &none  &kp HASH     &kp UNDERSCORE         &kp KP_PLUS  &none            &none      &none
+                                          &kp LEFT_ALT  &kp LEFT_COMMAND      &none         &none    &none  &none        &none                  &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
