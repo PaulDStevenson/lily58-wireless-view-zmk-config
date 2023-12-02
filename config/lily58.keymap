@@ -90,10 +90,10 @@
             layers = <1>;
         };
 
-        base_switch_to_game {
+        switch_to_game {
             bindings = <&to 2>;
             key-positions = <11 54>;
-            layers = <0>;
+            layers = <0 1 7>;
         };
 
         bootloader_left {
@@ -106,27 +106,22 @@
             key-positions = <6 11>;
         };
 
-        windows_switch_to_game {
-            bindings = <&to 2>;
-            key-positions = <11 54>;
-            layers = <1>;
-        };
-
         game_switch_to_base {
             bindings = <&to 0>;
             key-positions = <11 54>;
-            layers = <1>;
+            layers = <2>;
         };
 
-        base_switch_to_system {
+        switch_to_system {
             bindings = <&to 7>;
             key-positions = <0 36>;
-            layers = <0>;
+            layers = <0 1 2>;
         };
 
         system_switch_to_base {
             bindings = <&to 0>;
             key-positions = <0 36>;
+            layers = <7>;
         };
     };
 
