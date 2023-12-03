@@ -123,6 +123,12 @@
             key-positions = <0 36>;
             layers = <7>;
         };
+
+        caps_word {
+            bindings = <&caps_word>;
+            key-positions = <28 31>;
+            layers = <0 1>;
+        };
     };
 
     behaviors {
@@ -204,11 +210,11 @@
 
             label = "GBase";
             bindings = <
-&kp ESC       &kp N1  &kp N2  &kp N3    &kp N4     &kp N5                         &kp N6  &kp N7    &kp N8     &kp N9   &kp N0         &mt G MINUS
-&kp TAB       &kp Q   &kp W   &kp E     &kp R      &kp T                          &kp Y   &kp U     &kp I      &kp O    &kp P          &kp EQUAL
-&kp LSHIFT    &kp A   &kp S   &kp D     &kp F      &kp G                          &kp H   &kp J     &kp K      &kp L    &kp SEMICOLON  &kp SQT
-&kp LEFT_GUI  &kp Z   &kp X   &kp C     &kp V      &kp B   &kp LBKT     &kp RBKT  &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH       &kp RSHFT
-                              &kp LALT  &kp LCTRL  &mo 5   &kp SPACE    &kp RET   &mo 3   &kp BSPC  &kp RGUI
+&kp ESC       &kp N1  &kp N2  &kp N3    &kp N4     &kp N5                           &kp N6  &kp N7    &kp N8     &kp N9   &kp N0         &mt G MINUS
+&kp TAB       &kp Q   &kp W   &kp E     &kp R      &kp T                            &kp Y   &kp U     &kp I      &kp O    &kp P          &kp EQUAL
+&kp LSHIFT    &kp A   &kp S   &kp D     &kp F      &kp G                            &kp H   &kp J     &kp K      &kp L    &kp SEMICOLON  &kp SQT
+&kp LEFT_GUI  &kp Z   &kp X   &kp C     &kp V      &kp B   &key_repeat    &kp RBKT  &kp N   &kp M     &kp COMMA  &kp DOT  &kp FSLH       &kp RSHFT
+                              &kp LALT  &kp LCTRL  &mo 5   &kp SPACE      &kp RET   &mo 3   &kp BSPC  &kp RGUI
             >;
 
             label = "Gaming";
@@ -224,11 +230,11 @@
 
             label = "Sym";
             bindings = <
-&none           &kp F1    &kp F2          &kp F3        &kp F4                &kp F5                        &kp F6       &kp F7                 &kp F8       &kp F9           &kp F10    &kp F11
-&none           &none     &kp LEFT_BRACE  &kp LBKT      &kp LEFT_PARENTHESIS  &kp EXCL                      &kp AT_SIGN  &kp RIGHT_PARENTHESIS  &kp RBKT     &kp RIGHT_BRACE  &kp GRAVE  &kp F12
-&kp LEFT_SHIFT  &kp PIPE  &none           &none         &kp DOUBLE_QUOTES     &kp QUESTION                  &caps_word   &kp MINUS              &kp EQUAL    &none            &kp TILDE  &none
-&kp LCTRL       &kp BSLH  &none           &none         &kp APOS              &kp FSLH      &none    &none  &kp HASH     &kp UNDERSCORE         &kp KP_PLUS  &none            &none      &none
-                                          &kp LEFT_ALT  &kp LEFT_COMMAND      &none         &none    &none  &none        &none                  &none
+&kp ESC         &kp F1         &kp F2            &kp F3                &kp F4                 &kp F5                             &kp F6     &kp F7  &kp F8  &kp F9  &kp F10    &kp F11
+&none           &kp GRAVE      &kp EXCLAMATION   &kp LBKT              &kp RBKT               &kp MINUS                          &kp EQUAL  &kp N7  &kp N8  &kp N9  &kp ASTRK  &kp F12
+&kp LEFT_SHIFT  &kp PIPE       &kp LS(GRAVE)     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE                     &kp DOT    &kp N4  &kp N5  &kp N6  &kp PLUS   &none
+&kp LCTRL       &kp BACKSLASH  &kp SINGLE_QUOTE  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOUBLE_QUOTES  &none    &none  &kp N0     &kp N1  &kp N2  &kp N3  &kp FSLH   &none
+                                                 &kp LEFT_ALT          &kp LEFT_COMMAND       &none              &none    &none  &none      &none   &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
