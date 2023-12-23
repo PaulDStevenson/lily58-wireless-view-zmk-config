@@ -190,10 +190,10 @@
 
             label = "WBase";
             bindings = <
-&trans          &trans        &trans  &trans                &trans     &trans                    &trans  &trans  &trans       &trans  &trans              &mt W MINUS
-&trans          &trans        &trans  &trans                &trans     &trans                    &trans  &trans  &trans       &trans  &trans              &trans
-&kp LEFT_SHIFT  &HRML LWIN A  &trans  &HRML LEFT_CONTROL D  &trans     &trans                    &trans  &trans  &mt RCTRL K  &trans  &mt RGUI SEMICOLON  &trans
-&kp LEFT_GUI    &trans        &trans  &trans                &trans     &trans  &trans    &trans  &trans  &trans  &trans       &trans  &trans              &trans
+&trans          &trans        &trans  &trans                &trans     &trans                    &trans  &trans  &trans                 &trans  &trans                     &mt W MINUS
+&trans          &trans        &trans  &trans                &trans     &trans                    &trans  &trans  &trans                 &trans  &trans                     &trans
+&kp LEFT_SHIFT  &HRML LWIN A  &trans  &HRML LEFT_CONTROL D  &trans     &trans                    &trans  &trans  &HMRR RIGHT_CONTROL K  &trans  &HMRR RIGHT_GUI SEMICOLON  &trans
+&kp LEFT_GUI    &trans        &trans  &trans                &trans     &trans  &trans    &trans  &trans  &trans  &trans                 &trans  &trans                     &trans
                                       &kp LEFT_ALT          &kp LCTRL  &mo 5   &trans    &trans  &mo 3   &trans  &trans
             >;
 
@@ -253,7 +253,7 @@
 &trans    &trans        &trans             &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans  &trans
 &trans    &trans        &kp DOUBLE_QUOTES  &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans  &trans
 &kp PIPE  &kp LS(NUBS)  &kp BACKSLASH      &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans  &trans
-&trans    &trans        &trans             &trans  &trans  &kp AT_SIGN  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans    &kp TILDE     &trans             &trans  &trans  &kp AT_SIGN  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
                                            &trans  &trans  &none        &trans    &trans  &none   &trans  &trans
             >;
 
@@ -323,6 +323,16 @@
 
         Windows_Nav_Activate {
             if-layers = <1 5>;
+            then-layer = <6>;
+        };
+
+        Gaming_Symbol_Activate {
+            if-layers = <3 2>;
+            then-layer = <4>;
+        };
+
+        Gaming_Nav_Activate {
+            if-layers = <5 2>;
             then-layer = <6>;
         };
     };
