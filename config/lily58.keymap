@@ -250,11 +250,11 @@
 
             label = "WSym";
             bindings = <
-&trans    &trans        &trans             &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans  &trans
-&trans    &trans        &kp DOUBLE_QUOTES  &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans  &trans
-&kp PIPE  &kp LS(NUBS)  &kp BACKSLASH      &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans  &trans
-&trans    &kp TILDE     &trans             &trans  &trans  &kp AT_SIGN  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                           &trans  &trans  &none        &trans    &trans  &none   &trans  &trans
+&trans    &trans           &trans             &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans  &trans
+&trans    &trans           &kp DOUBLE_QUOTES  &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans  &trans
+&kp PIPE  &kp LS(NUBS)     &kp BACKSLASH      &trans  &trans  &trans                         &trans  &trans  &trans  &trans  &trans  &trans
+&trans    &kp NON_US_BSLH  &trans             &trans  &trans  &kp AT_SIGN  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                              &trans  &trans  &none        &trans    &trans  &none   &trans  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
