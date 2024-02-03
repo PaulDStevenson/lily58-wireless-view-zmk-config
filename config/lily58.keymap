@@ -28,7 +28,7 @@
             label = "SELECT_WORD";
         };
 
-        select_line_mac: select_line_mac {
+        delete_line_mac: delete_line_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -41,9 +41,11 @@
                 <&macro_tap>,
                 <&kp RIGHT>,
                 <&macro_release>,
-                <&kp LEFT_GUI &kp LEFT_SHIFT>;
+                <&kp LEFT_GUI &kp LEFT_SHIFT>,
+                <&macro_press>,
+                <&kp BACKSPACE>;
 
-            label = "SELECT_LINE";
+            label = "DELETE_LINE";
         };
 
         next_tab: next_tab {
@@ -270,8 +272,8 @@
 
             label = "Nav";
             bindings = <
-&trans     &kp LG(LS(Z))      &trans                &kp LG(BSLH)      &kp LC(LS(TAB))         &kp LC(TAB)                      &kp INS        &trans              &trans          &trans         &trans  &trans
-&kp GRAVE  &kp LC(H)          &kp LA(BACKSPACE)     &kp LA(DEL)       &kp LG(TAB)             &kp ENTER                        &kp PAGE_UP    &kp LG(LEFT)        &kp UP_ARROW    &kp LG(RIGHT)  &none   &none
+&trans     &kp LG(LS(Z))      &trans                &kp LC(LS(TAB))   &kp LC(TAB)             &kp LG(R)                        &kp INS        &trans              &trans          &trans         &trans  &trans
+&kp GRAVE  &kp LC(H)          &kp LA(BACKSPACE)     &delete_line_mac  &kp LG(TAB)             &kp ENTER                        &kp PAGE_UP    &kp LG(LEFT)        &kp UP_ARROW    &kp LG(RIGHT)  &none   &none
 &none      &HRML LCTRL LG(Z)  &HRML LEFT_ALT LG(X)  &HRML LGUI LG(C)  &HRML LEFT_SHIFT LG(V)  &kp BACKSPACE                    &kp PAGE_DOWN  &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT      &none   &none
 &none      &none              &none                 &none             &none                   &kp DELETE     &trans    &trans  &kp DELETE     &kp RA(LEFT_ARROW)  &none           &kp LA(RIGHT)  &none   &none
                                                     &trans            &trans                  &trans         &trans    &trans  &trans         &trans              &trans
@@ -290,11 +292,11 @@
 
             label = "WNav";
             bindings = <
-&trans  &trans                &trans                &trans             &trans                  &trans                    &trans  &trans              &trans  &trans         &trans  &trans
-&trans  &trans                &trans                &trans             &kp LA(TAB)             &trans                    &trans  &kp HOME            &trans  &kp END        &trans  &trans
-&trans  &HRML LEFT_GUI LC(Z)  &HRML LEFT_ALT LC(X)  &HRML LCTRL LC(C)  &HRML LEFT_SHIFT LC(V)  &trans                    &trans  &trans              &trans  &trans         &trans  &trans
-&trans  &trans                &trans                &trans             &trans                  &trans  &trans    &trans  &trans  &kp LC(LEFT_ARROW)  &trans  &kp LC(RIGHT)  &trans  &trans
-                                                    &trans             &trans                  &trans  &trans    &trans  &trans  &trans              &trans
+&trans  &trans                &trans                &trans             &trans                  &kp LC(F5)                    &trans  &trans              &trans  &trans         &trans  &trans
+&trans  &trans                &trans                &trans             &kp LA(TAB)             &trans                        &trans  &kp HOME            &trans  &kp END        &trans  &trans
+&trans  &HRML LEFT_GUI LC(Z)  &HRML LEFT_ALT LC(X)  &HRML LCTRL LC(C)  &HRML LEFT_SHIFT LC(V)  &trans                        &trans  &trans              &trans  &trans         &trans  &trans
+&trans  &trans                &trans                &trans             &trans                  &trans      &trans    &trans  &trans  &kp LC(LEFT_ARROW)  &trans  &kp LC(RIGHT)  &trans  &trans
+                                                    &trans             &trans                  &trans      &trans    &trans  &trans  &trans              &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
