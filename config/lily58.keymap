@@ -45,35 +45,63 @@
                 <&macro_press>,
                 <&kp BACKSPACE>;
 
-            label = "DELETE_LINE";
+            label = "DELETE_LINE_MAC";
         };
 
-        next_tab: next_tab {
+        delete_line_win: delete_line_win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp HOME>,
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp END>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp BACKSPACE>;
+
+            label = "DELETE_LINE_WIN";
+        };
+
+        cut_line_mac: cut_line_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LEFT_CONTROL>,
+                <&kp LEFT_GUI>,
                 <&macro_tap>,
-                <&kp TAB>,
+                <&kp LEFT>,
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp RIGHT>,
                 <&macro_release>,
-                <&kp LEFT_CONTROL>;
+                <&kp LEFT_GUI &kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp LG(X)>;
 
-            label = "NEXT_TAB";
+            label = "CUT_LINE_MAC";
         };
 
-        prev_tab: prev_tab {
+        cut_line_win: cut_line_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press>,
-                <&kp LEFT_CONTROL &kp LEFT_SHIFT>,
                 <&macro_tap>,
-                <&kp TAB>,
+                <&kp HOME>,
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp END>,
                 <&macro_release>,
-                <&kp LEFT_CONTROL &kp LEFT_SHIFT>;
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp LC(X)>;
 
-            label = "PREV_TAB";
+            label = "CUT_LINE_WIN";
         };
     };
 
@@ -273,7 +301,7 @@
             label = "Nav";
             bindings = <
 &trans     &kp LG(LS(Z))      &trans                &kp LC(LS(TAB))   &kp LC(TAB)             &kp LG(R)                        &kp INS        &trans              &trans          &trans         &trans  &trans
-&kp GRAVE  &kp LC(H)          &kp LA(BACKSPACE)     &delete_line_mac  &kp LG(TAB)             &kp ENTER                        &kp PAGE_UP    &kp LG(LEFT)        &kp UP_ARROW    &kp LG(RIGHT)  &none   &none
+&kp GRAVE  &kp LC(H)          &cut_line_mac         &delete_line_mac  &kp LG(TAB)             &kp ENTER                        &kp PAGE_UP    &kp LG(LEFT)        &kp UP_ARROW    &kp LG(RIGHT)  &none   &none
 &none      &HRML LCTRL LG(Z)  &HRML LEFT_ALT LG(X)  &HRML LGUI LG(C)  &HRML LEFT_SHIFT LG(V)  &kp BACKSPACE                    &kp PAGE_DOWN  &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT      &none   &none
 &none      &none              &none                 &none             &none                   &kp DELETE     &trans    &trans  &kp DELETE     &kp RA(LEFT_ARROW)  &none           &kp LA(RIGHT)  &none   &none
                                                     &trans            &trans                  &trans         &trans    &trans  &trans         &trans              &trans
@@ -293,7 +321,7 @@
             label = "WNav";
             bindings = <
 &trans  &trans                &trans                &trans             &trans                  &kp LC(F5)                    &trans  &trans              &trans  &trans         &trans  &trans
-&trans  &trans                &trans                &trans             &kp LA(TAB)             &trans                        &trans  &kp HOME            &trans  &kp END        &trans  &trans
+&trans  &trans                &cut_line_win         &delete_line_win   &kp LA(TAB)             &trans                        &trans  &kp HOME            &trans  &kp END        &trans  &trans
 &trans  &HRML LEFT_GUI LC(Z)  &HRML LEFT_ALT LC(X)  &HRML LCTRL LC(C)  &HRML LEFT_SHIFT LC(V)  &trans                        &trans  &trans              &trans  &trans         &trans  &trans
 &trans  &trans                &trans                &trans             &trans                  &trans      &trans    &trans  &trans  &kp LC(LEFT_ARROW)  &trans  &kp LC(RIGHT)  &trans  &trans
                                                     &trans             &trans                  &trans      &trans    &trans  &trans  &trans              &trans
