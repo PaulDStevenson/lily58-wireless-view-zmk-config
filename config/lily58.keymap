@@ -42,7 +42,7 @@
                 <&kp RIGHT>,
                 <&macro_release>,
                 <&kp LEFT_GUI &kp LEFT_SHIFT>,
-                <&macro_press>,
+                <&macro_tap>,
                 <&kp BACKSPACE>;
 
             label = "DELETE_LINE_MAC";
