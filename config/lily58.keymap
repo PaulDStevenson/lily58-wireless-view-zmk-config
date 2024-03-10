@@ -114,16 +114,10 @@
             layers = <0>;
         };
 
-        windows_switch_to_base {
-            bindings = <&to 0>;
+        windows_switch_to_game {
+            bindings = <&to 2>;
             key-positions = <11 49>;
             layers = <1>;
-        };
-
-        switch_to_game {
-            bindings = <&to 2>;
-            key-positions = <11 54>;
-            layers = <0 1 7>;
         };
 
         bootloader_left {
@@ -138,7 +132,7 @@
 
         game_switch_to_base {
             bindings = <&to 0>;
-            key-positions = <11 54>;
+            key-positions = <11 49>;
             layers = <2>;
         };
 
@@ -188,6 +182,13 @@
             hold-trigger-key-positions = <0 1 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 42 50 51 52 53 2 3 4 43 54 55 56 57 11 35 23 49>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
+        };
+
+        TAPD_Par: TAPD_Par {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAPD_PAR";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
         };
     };
 
@@ -338,7 +339,7 @@
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &none  &none  &none  &none  &none  &none
 &none       &none         &none         &none         &none         &none                         &none  &none  &none  &none  &none  &none
-&none       &none         &none         &none         &none         &none                         &none  &none  &none  &none  &none  &none
+&none       &none         &none         &none         &TAPD_Par     &none                         &none  &none  &none  &none  &none  &none
 &none       &none         &none         &none         &none         &none         &none    &none  &none  &none  &none  &none  &none  &none
                                         &none         &none         &none         &none    &none  &none  &none  &none
             >;
