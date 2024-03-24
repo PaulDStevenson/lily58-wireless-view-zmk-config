@@ -370,11 +370,11 @@
 
         mac_space_layer {
             bindings = <
-&trans  &trans  &trans            &trans            &trans            &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LG(NUMBER_6)  &kp LG(N5)        &kp LG(NUMBER_4)  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LG(NUMBER_3)  &kp LG(NUMBER_2)  &kp LG(NUMBER_1)  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans            &trans            &trans            &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                  &trans            &trans            &trans  &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &kp LC(LA(LEFT))  &kp LC(LA(RIGHT))  &kp LC(LA(RET))   &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LG(NUMBER_6)  &kp LG(N5)         &kp LG(NUMBER_4)  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LG(NUMBER_3)  &kp LG(NUMBER_2)   &kp LG(NUMBER_1)  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans            &trans             &trans            &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                  &trans             &trans            &trans  &trans    &trans  &trans  &trans  &trans
             >;
 
             label = "MSpace";
@@ -382,11 +382,11 @@
 
         win_space_layer {
             bindings = <
-&trans  &trans  &trans            &trans            &trans            &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LG(NUMBER_6)  &kp LG(N5)        &kp LG(NUMBER_4)  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LG(NUMBER_3)  &kp LG(NUMBER_2)  &kp LG(NUMBER_1)  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans            &trans            &trans            &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                  &trans            &trans            &trans  &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &kp LG(LEFT_ARROW)  &kp LG(RIGHT)     &kp LG(UP_ARROW)  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LG(NUMBER_6)    &kp LG(N5)        &kp LG(NUMBER_4)  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LG(NUMBER_3)    &kp LG(NUMBER_2)  &kp LG(NUMBER_1)  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans              &trans            &trans            &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                    &trans            &trans            &trans  &trans    &trans  &trans  &trans  &trans
             >;
 
             label = "WSpace";
@@ -426,6 +426,11 @@
         Gaming_Nav_Activate {
             if-layers = <5 2>;
             then-layer = <6>;
+        };
+
+        window_space_activate {
+            if-layers = <1 7>;
+            then-layer = <8>;
         };
     };
 };
