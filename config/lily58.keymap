@@ -224,10 +224,10 @@
             flavor = "hold-preferred";
         };
 
-        shift_layer: shift_layer {
+        backspace_layer: backspace_layer {
             compatible = "zmk,behavior-hold-tap";
-            label = "SHIFT_LAYER";
-            bindings = <&mo>, <&sk>;
+            label = "BACKSPACE_LAYER";
+            bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <280>;
@@ -249,11 +249,11 @@
 
             label = "Base";
             bindings = <
-&kp ESC         &kp N1         &kp N2            &kp N3            &kp N4              &kp N5                                                  &kp N6         &kp N7               &kp N8             &kp N9             &kp N0                 &kp MINUS
-&kp TAB         &kp Q          &kp W             &kp E             &kp R               &kp T                                                   &kp Y          &kp U                &kp I              &kp O              &kp P                  &kp EQUAL
-&kp LEFT_SHIFT  &HRML LCTRL A  &HRML LEFT_ALT S  &HRML LEFT_GUI D  &HRML LEFT_SHIFT F  &kp G                                                   &kp H          &HMRR RIGHT_SHIFT J  &HMRR RIGHT_GUI K  &HMRR RIGHT_ALT L  &HMRR RCTRL SEMICOLON  &kp SQT
-&kp LCTRL       &kp Z          &kp X             &kp C             &kp V               &kp B                 &kp LBKT                &kp RBKT  &kp N          &kp M                &kp COMMA          &kp DOT            &kp FSLH               &kp RIGHT_SHIFT
-                                                 &kp LALT          &kp LGUI            &shift_layer 5 LSHFT  &space_layer 7 SPACE    &kp RET   &TH_layer 3 3  &kp BSPC             &kp RGUI
+&kp ESC         &kp N1         &kp N2            &kp N3            &kp N4              &kp N5                                                          &kp N6         &kp N7               &kp N8             &kp N9             &kp N0                 &kp MINUS
+&kp TAB         &kp Q          &kp W             &kp E             &kp R               &kp T                                                           &kp Y          &kp U                &kp I              &kp O              &kp P                  &kp EQUAL
+&kp LEFT_SHIFT  &HRML LCTRL A  &HRML LEFT_ALT S  &HRML LEFT_GUI D  &HRML LEFT_SHIFT F  &kp G                                                           &kp H          &HMRR RIGHT_SHIFT J  &HMRR RIGHT_GUI K  &HMRR RIGHT_ALT L  &HMRR RCTRL SEMICOLON  &kp SQT
+&kp LCTRL       &kp Z          &kp X             &kp C             &kp V               &kp B                         &kp LBKT                &kp RBKT  &kp N          &kp M                &kp COMMA          &kp DOT            &kp FSLH               &kp RIGHT_SHIFT
+                                                 &kp LALT          &kp LGUI            &backspace_layer 5 BACKSPACE  &space_layer 7 SPACE    &kp RET   &TH_layer 3 3  &kp BSPC             &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -381,11 +381,11 @@
 
         mac_space_layer {
             bindings = <
-&trans  &trans  &kp LC(LA(LEFT))  &kp LC(LA(RIGHT))  &kp LC(LA(RET))   &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LG(NUMBER_6)  &kp LG(N5)         &kp LG(NUMBER_4)  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LG(NUMBER_3)  &kp LG(NUMBER_2)   &kp LG(NUMBER_1)  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans            &trans             &trans            &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                  &trans             &trans            &trans  &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &kp LC(LA(LEFT))  &kp LC(LA(RIGHT))  &kp LC(LA(RET))   &kp LC(LA(DOWN))                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LG(NUMBER_6)  &kp LG(N5)         &kp LG(NUMBER_4)  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LG(NUMBER_3)  &kp LG(NUMBER_2)   &kp LG(NUMBER_1)  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans            &trans             &trans            &trans            &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                  &trans             &trans            &trans            &trans    &trans  &trans  &trans  &trans
             >;
 
             label = "MSpace";
