@@ -203,9 +203,9 @@
             bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
         };
 
-        TTHM: TTHM {
+        TH_layer: TH_layer {
             compatible = "zmk,behavior-hold-tap";
-            label = "TTHM";
+            label = "TH_LAYER";
             bindings = <&mo>, <&tog>;
 
             #binding-cells = <2>;
@@ -217,6 +217,17 @@
             compatible = "zmk,behavior-hold-tap";
             label = "SPACE_LAYER";
             bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            hold-trigger-on-release;
+            flavor = "hold-preferred";
+        };
+
+        shift_layer: shift_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SHIFT_LAYER";
+            bindings = <&mo>, <&sk>;
 
             #binding-cells = <2>;
             tapping-term-ms = <280>;
@@ -238,11 +249,11 @@
 
             label = "Base";
             bindings = <
-&kp ESC         &kp N1         &kp N2            &kp N3            &kp N4              &kp N5                                    &kp N6     &kp N7               &kp N8             &kp N9             &kp N0                 &kp MINUS
-&kp TAB         &kp Q          &kp W             &kp E             &kp R               &kp T                                     &kp Y      &kp U                &kp I              &kp O              &kp P                  &kp EQUAL
-&kp LEFT_SHIFT  &HRML LCTRL A  &HRML LEFT_ALT S  &HRML LEFT_GUI D  &HRML LEFT_SHIFT F  &kp G                                     &kp H      &HMRR RIGHT_SHIFT J  &HMRR RIGHT_GUI K  &HMRR RIGHT_ALT L  &HMRR RCTRL SEMICOLON  &kp SQT
-&kp LCTRL       &kp Z          &kp X             &kp C             &kp V               &kp B   &kp LBKT                &kp RBKT  &kp N      &kp M                &kp COMMA          &kp DOT            &kp FSLH               &kp RIGHT_SHIFT
-                                                 &kp LALT          &kp LGUI            &mo 5   &space_layer 7 SPACE    &kp RET   &TTHM 3 3  &kp BSPC             &kp RGUI
+&kp ESC         &kp N1         &kp N2            &kp N3            &kp N4              &kp N5                                                  &kp N6         &kp N7               &kp N8             &kp N9             &kp N0                 &kp MINUS
+&kp TAB         &kp Q          &kp W             &kp E             &kp R               &kp T                                                   &kp Y          &kp U                &kp I              &kp O              &kp P                  &kp EQUAL
+&kp LEFT_SHIFT  &HRML LCTRL A  &HRML LEFT_ALT S  &HRML LEFT_GUI D  &HRML LEFT_SHIFT F  &kp G                                                   &kp H          &HMRR RIGHT_SHIFT J  &HMRR RIGHT_GUI K  &HMRR RIGHT_ALT L  &HMRR RCTRL SEMICOLON  &kp SQT
+&kp LCTRL       &kp Z          &kp X             &kp C             &kp V               &kp B                 &kp LBKT                &kp RBKT  &kp N          &kp M                &kp COMMA          &kp DOT            &kp FSLH               &kp RIGHT_SHIFT
+                                                 &kp LALT          &kp LGUI            &shift_layer 5 LSHFT  &space_layer 7 SPACE    &kp RET   &TH_layer 3 3  &kp BSPC             &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -258,11 +269,11 @@
 
             label = "WBase";
             bindings = <
-&trans          &trans        &trans  &trans                &trans     &trans                    &trans     &trans  &trans                 &trans  &trans                     &trans
-&trans          &trans        &trans  &trans                &trans     &trans                    &trans     &trans  &trans                 &trans  &trans                     &trans
-&kp LEFT_SHIFT  &HRML LWIN A  &trans  &HRML LEFT_CONTROL D  &trans     &trans                    &trans     &trans  &HMRR RIGHT_CONTROL K  &trans  &HMRR RIGHT_GUI SEMICOLON  &trans
-&kp LEFT_GUI    &trans        &trans  &trans                &trans     &trans  &trans    &trans  &trans     &trans  &trans                 &trans  &trans                     &trans
-                                      &kp LEFT_ALT          &kp LCTRL  &mo 5   &trans    &trans  &TTHM 3 3  &trans  &trans
+&trans          &trans        &trans  &trans                &trans     &trans                    &trans         &trans  &trans                 &trans  &trans                     &trans
+&trans          &trans        &trans  &trans                &trans     &trans                    &trans         &trans  &trans                 &trans  &trans                     &trans
+&kp LEFT_SHIFT  &HRML LWIN A  &trans  &HRML LEFT_CONTROL D  &trans     &trans                    &trans         &trans  &HMRR RIGHT_CONTROL K  &trans  &HMRR RIGHT_GUI SEMICOLON  &trans
+&kp LEFT_GUI    &trans        &trans  &trans                &trans     &trans  &trans    &trans  &trans         &trans  &trans                 &trans  &trans                     &trans
+                                      &kp LEFT_ALT          &kp LCTRL  &mo 5   &trans    &trans  &TH_layer 3 3  &trans  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
