@@ -368,7 +368,7 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        space_layer {
+        mac_space_layer {
             bindings = <
 &trans  &trans  &trans            &trans            &trans            &trans                    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp LG(NUMBER_6)  &kp LG(N5)        &kp LG(NUMBER_4)  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
@@ -377,7 +377,19 @@
                                   &trans            &trans            &trans  &trans    &trans  &trans  &trans  &trans
             >;
 
-            label = "SLayer";
+            label = "MSpace";
+        };
+
+        win_space_layer {
+            bindings = <
+&trans  &trans  &trans            &trans            &trans            &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LG(NUMBER_6)  &kp LG(N5)        &kp LG(NUMBER_4)  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LG(NUMBER_3)  &kp LG(NUMBER_2)  &kp LG(NUMBER_1)  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans            &trans            &trans            &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                  &trans            &trans            &trans  &trans    &trans  &trans  &trans  &trans
+            >;
+
+            label = "WSpace";
         };
 
         keyboard_system {
