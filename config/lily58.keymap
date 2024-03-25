@@ -4,10 +4,10 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include "keys_uk.h"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include "keys_uk.h"
 
 / {
     macros {
@@ -166,6 +166,12 @@
             key-positions = <32 31>;
             layers = <0 1>;
         };
+
+        capsword_T {
+            bindings = <&caps_word>;
+            key-positions = <56 51>;
+            layers = <0 1>;
+        };
     };
 
     behaviors {
@@ -233,7 +239,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <280>;
             hold-trigger-on-release;
-            flavor = "hold-preferred";
+            flavor = "balanced";
         };
     };
 
@@ -270,11 +276,11 @@
 
             label = "WBase";
             bindings = <
-&trans          &trans        &trans  &trans                &trans     &trans                    &trans         &trans  &trans                 &trans  &trans                     &trans
-&trans          &trans        &trans  &trans                &trans     &trans                    &trans         &trans  &trans                 &trans  &trans                     &trans
-&kp LEFT_SHIFT  &HRML LWIN A  &trans  &HRML LEFT_CONTROL D  &trans     &trans                    &trans         &trans  &HMRR RIGHT_CONTROL K  &trans  &HMRR RIGHT_GUI SEMICOLON  &trans
-&kp LEFT_GUI    &trans        &trans  &trans                &trans     &trans  &trans    &trans  &trans         &trans  &trans                 &trans  &trans                     &trans
-                                      &trans                &kp LCTRL  &mo 5   &trans    &trans  &TH_layer 3 3  &trans  &trans
+&trans          &trans        &trans  &trans                &trans          &trans                                          &trans         &trans           &trans                 &trans  &trans                     &trans
+&trans          &trans        &trans  &trans                &trans          &trans                                          &trans         &trans           &trans                 &trans  &trans                     &trans
+&kp LEFT_SHIFT  &HRML LWIN A  &trans  &HRML LEFT_CONTROL D  &trans          &trans                                          &trans         &trans           &HMRR RIGHT_CONTROL K  &trans  &HMRR RIGHT_GUI SEMICOLON  &trans
+&kp LEFT_GUI    &trans        &trans  &trans                &trans          &trans                        &trans    &trans  &trans         &trans           &trans                 &trans  &trans                     &trans
+                                      &trans                &kp LEFT_SHIFT  &backspace_layer 5 BACKSPACE  &trans    &trans  &TH_layer 3 3  &kp RIGHT_SHIFT  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
