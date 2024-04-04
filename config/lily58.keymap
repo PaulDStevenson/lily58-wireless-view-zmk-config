@@ -280,7 +280,7 @@
 &trans          &trans        &trans  &trans                &trans          &trans                                          &trans         &trans           &trans                 &trans  &trans                     &trans
 &kp LEFT_SHIFT  &HRML LWIN A  &trans  &HRML LEFT_CONTROL D  &trans          &trans                                          &trans         &trans           &HMRR RIGHT_CONTROL K  &trans  &HMRR RIGHT_GUI SEMICOLON  &trans
 &kp LEFT_GUI    &trans        &trans  &trans                &trans          &trans                        &trans    &trans  &trans         &trans           &trans                 &trans  &trans                     &trans
-                                      &trans                &kp LEFT_SHIFT  &backspace_layer 5 BACKSPACE  &trans    &trans  &mo 3  &kp RIGHT_SHIFT  &trans
+                                      &trans                &trans  &trans  &trans    &trans  &trans  &trans  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
