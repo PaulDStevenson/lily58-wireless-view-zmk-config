@@ -172,6 +172,18 @@
             key-positions = <56 51>;
             layers = <0 1>;
         };
+
+        vertical_return {
+            bindings = <&kp RET>;
+            key-positions = <16 28>;
+            layers = <0 1>;
+        };
+
+        horizontal_return {
+            bindings = <&kp RET>;
+            key-positions = <16 15>;
+            layers = <0 1>;
+        };
     };
 
     behaviors {
@@ -256,11 +268,11 @@
 
             label = "Base";
             bindings = <
-&kp ESC         &kp N1         &kp N2            &kp N3            &kp N4              &kp N5                                                          &kp N6         &kp N7               &kp N8             &kp N9             &kp N0                 &kp MINUS
-&kp TAB         &kp Q          &kp W             &kp E             &kp R               &kp T                                                           &kp Y          &kp U                &kp I              &kp O              &kp P                  &kp EQUAL
-&kp LEFT_SHIFT  &HRML LCTRL A  &HRML LEFT_ALT S  &HRML LEFT_GUI D  &HRML LEFT_SHIFT F  &kp G                                                           &kp H          &HMRR RIGHT_SHIFT J  &HMRR RIGHT_GUI K  &HMRR RIGHT_ALT L  &HMRR RCTRL SEMICOLON  &kp SQT
-&kp LCTRL       &kp Z          &kp X             &kp C             &kp V               &kp B                         &kp LBKT                &kp RBKT  &kp N          &kp M                &kp COMMA          &kp DOT            &kp FSLH               &kp RIGHT_SHIFT
-                                                 &none            &kp ENTER      &backspace_layer 5 BACKSPACE  &kp SPACE   &kp LEFT_SHIFT   &mo 3  &sk RIGHT_SHIFT      &none
+&kp ESC         &kp N1         &kp N2            &kp N3            &kp N4              &kp N5                                                     &kp N6  &kp N7               &kp N8             &kp N9             &kp N0                 &kp MINUS
+&kp TAB         &kp Q          &kp W             &kp E             &kp R               &kp T                                                      &kp Y   &kp U                &kp I              &kp O              &kp P                  &kp EQUAL
+&kp LEFT_SHIFT  &HRML LCTRL A  &HRML LEFT_ALT S  &HRML LEFT_GUI D  &HRML LEFT_SHIFT F  &kp G                                                      &kp H   &HMRR RIGHT_SHIFT J  &HMRR RIGHT_GUI K  &HMRR RIGHT_ALT L  &HMRR RCTRL SEMICOLON  &kp SQT
+&kp LCTRL       &kp Z          &kp X             &kp C             &kp V               &kp B                         &kp LBKT     &kp RBKT        &kp N   &kp M                &kp COMMA          &kp DOT            &kp FSLH               &kp RIGHT_SHIFT
+                                                 &none             &kp ENTER           &backspace_layer 5 BACKSPACE  &kp SPACE    &kp LEFT_SHIFT  &mo 3   &sk RIGHT_SHIFT      &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -276,10 +288,10 @@
 
             label = "WBase";
             bindings = <
-&trans          &trans        &trans  &trans                &trans          &trans                                          &trans         &trans           &trans                 &trans  &trans                     &trans
-&trans          &trans        &trans  &trans                &trans          &trans                                          &trans         &trans           &trans                 &trans  &trans                     &trans
-&kp LEFT_SHIFT  &HRML LWIN A  &trans  &HRML LEFT_CONTROL D  &trans          &trans                                          &trans         &trans           &HMRR RIGHT_CONTROL K  &trans  &HMRR RIGHT_GUI SEMICOLON  &trans
-&kp LEFT_GUI    &trans        &trans  &trans                &trans          &trans                        &trans    &trans  &trans         &trans           &trans                 &trans  &trans                     &trans
+&trans          &trans        &trans  &trans                &trans  &trans                    &trans  &trans  &trans                 &trans  &trans                     &trans
+&trans          &trans        &trans  &trans                &trans  &trans                    &trans  &trans  &trans                 &trans  &trans                     &trans
+&kp LEFT_SHIFT  &HRML LWIN A  &trans  &HRML LEFT_CONTROL D  &trans  &trans                    &trans  &trans  &HMRR RIGHT_CONTROL K  &trans  &HMRR RIGHT_GUI SEMICOLON  &trans
+&kp LEFT_GUI    &trans        &trans  &trans                &trans  &trans  &trans    &trans  &trans  &trans  &trans                 &trans  &trans                     &trans
                                       &trans                &trans  &trans  &trans    &trans  &trans  &trans  &trans
             >;
 
@@ -359,7 +371,7 @@
 &trans     &kp LG(LS(Z))      &trans                &kp LC(LS(TAB))   &kp LC(TAB)             &kp LG(R)                        &kp INS        &trans              &trans          &trans         &trans  &trans
 &kp GRAVE  &kp LC(H)          &cut_line_mac         &delete_line_mac  &kp LG(TAB)             &kp ENTER                        &kp PAGE_UP    &kp LG(LEFT)        &kp UP_ARROW    &kp LG(RIGHT)  &none   &none
 &none      &HRML LCTRL LG(Z)  &HRML LEFT_ALT LG(X)  &HRML LGUI LG(C)  &HRML LEFT_SHIFT LG(V)  &kp BACKSPACE                    &kp PAGE_DOWN  &kp LEFT_ARROW      &kp DOWN_ARROW  &kp RIGHT      &none   &none
-&none      &none              &none                 &none             &none                   &kp DELETE     &trans    &trans  &kp DELETE     &kp RA(LEFT_ARROW)  &none           &kp LA(RIGHT)  &none   &none
+&none      &kp LG(Z)          &kp LG(X)             &kp LG(C)         &kp LG(V)               &kp DELETE     &trans    &trans  &kp DELETE     &kp RA(LEFT_ARROW)  &none           &kp LA(RIGHT)  &none   &none
                                                     &trans            &trans                  &trans         &trans    &trans  &trans         &trans              &trans
             >;
 
@@ -379,7 +391,7 @@
 &trans  &trans                &trans                &trans             &trans                  &kp LC(F5)                    &trans  &trans              &trans  &trans         &trans  &trans
 &trans  &trans                &cut_line_win         &delete_line_win   &kp LA(TAB)             &trans                        &trans  &kp HOME            &trans  &kp END        &trans  &trans
 &trans  &HRML LEFT_GUI LC(Z)  &HRML LEFT_ALT LC(X)  &HRML LCTRL LC(C)  &HRML LEFT_SHIFT LC(V)  &trans                        &trans  &trans              &trans  &trans         &trans  &trans
-&trans  &trans                &trans                &trans             &trans                  &trans      &trans    &trans  &trans  &kp LC(LEFT_ARROW)  &trans  &kp LC(RIGHT)  &trans  &trans
+&trans  &kp LC(Z)             &kp LC(X)             &kp LC(C)          &kp LC(V)               &trans      &trans    &trans  &trans  &kp LC(LEFT_ARROW)  &trans  &kp LC(RIGHT)  &trans  &trans
                                                     &trans             &trans                  &trans      &trans    &trans  &trans  &trans              &trans
             >;
 
