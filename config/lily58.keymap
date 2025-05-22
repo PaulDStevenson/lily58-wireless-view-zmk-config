@@ -9,6 +9,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+
+
 / {
     macros {
         select_word_mac: select_word_mac {
